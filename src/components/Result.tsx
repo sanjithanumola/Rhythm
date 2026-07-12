@@ -31,39 +31,45 @@ export function Result({ result, onReplay, onMenu }: { result: GameResult, onRep
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-zinc-950 text-white p-8">
-      <div className="max-w-2xl w-full bg-zinc-900 p-12 rounded-3xl border border-zinc-800 text-center">
-        <h2 className="text-5xl font-black mb-2 text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-500">
+    <div className="flex flex-col items-center justify-center min-h-screen p-8">
+      <div className="max-w-2xl w-full bg-zinc-950/80 backdrop-blur-md p-12 rounded-2xl border border-emerald-500/20 text-center relative glow-box-emerald">
+        {/* HUD Corners */}
+        <div className="hud-corner hud-top-left"></div>
+        <div className="hud-corner hud-top-right"></div>
+        <div className="hud-corner hud-bottom-left"></div>
+        <div className="hud-corner hud-bottom-right"></div>
+
+        <h2 className="text-5xl font-black mb-2 tracking-tighter text-transparent bg-clip-text bg-gradient-to-br from-emerald-400 via-teal-300 to-emerald-500 glow-text-emerald">
           STAGE CLEARED
         </h2>
-        <div className="text-7xl font-bold mb-12">{result.score.toLocaleString()}</div>
+        <div className="text-7xl font-bold mb-12 tracking-tight text-white">{result.score.toLocaleString()}</div>
         
         <div className="grid grid-cols-2 gap-8 mb-12 text-left">
           <div className="space-y-4">
             <div className="flex justify-between border-b border-zinc-800 pb-2">
-              <span className="text-zinc-400">Max Combo</span>
-              <span className="font-bold">{result.maxCombo}</span>
+              <span className="text-zinc-400 font-medium">Max Combo</span>
+              <span className="font-bold text-white">{result.maxCombo}</span>
             </div>
             <div className="flex justify-between border-b border-zinc-800 pb-2">
-              <span className="text-zinc-400">Accuracy</span>
-              <span className="font-bold">{accuracy}%</span>
+              <span className="text-zinc-400 font-medium">Accuracy</span>
+              <span className="font-bold text-white">{accuracy}%</span>
             </div>
           </div>
           <div className="space-y-2">
-            <div className="flex justify-between text-yellow-500">
-              <span>Perfect</span>
+            <div className="flex justify-between text-emerald-400">
+              <span className="font-medium">Perfect</span>
               <span className="font-bold">{result.perfects}</span>
             </div>
-            <div className="flex justify-between text-green-500">
-              <span>Great</span>
+            <div className="flex justify-between text-lime-400">
+              <span className="font-medium">Great</span>
               <span className="font-bold">{result.greats}</span>
             </div>
-            <div className="flex justify-between text-cyan-500">
-              <span>Good</span>
+            <div className="flex justify-between text-cyan-400">
+              <span className="font-medium">Good</span>
               <span className="font-bold">{result.goods}</span>
             </div>
-            <div className="flex justify-between text-red-500">
-              <span>Miss</span>
+            <div className="flex justify-between text-red-400">
+              <span className="font-medium">Miss</span>
               <span className="font-bold">{result.misses}</span>
             </div>
           </div>
@@ -73,30 +79,30 @@ export function Result({ result, onReplay, onMenu }: { result: GameResult, onRep
           <div className="flex gap-4 justify-center">
             <button 
               onClick={downloadAudio}
-              className="flex items-center gap-2 px-6 py-3 bg-zinc-800 hover:bg-zinc-700 text-white font-bold rounded-xl transition-colors cursor-pointer"
+              className="flex items-center gap-2 px-6 py-3 bg-zinc-900 border border-zinc-800 hover:border-emerald-500/40 text-white font-bold rounded-xl transition-all cursor-pointer hover:bg-zinc-850"
             >
-              <Download size={18} /> Audio
+              <Download size={18} className="text-emerald-400" /> Audio
             </button>
             <button 
               onClick={downloadBeatmap}
-              className="flex items-center gap-2 px-6 py-3 bg-zinc-800 hover:bg-zinc-700 text-white font-bold rounded-xl transition-colors cursor-pointer"
+              className="flex items-center gap-2 px-6 py-3 bg-zinc-900 border border-zinc-800 hover:border-emerald-500/40 text-white font-bold rounded-xl transition-all cursor-pointer hover:bg-zinc-850"
             >
-              <Download size={18} /> Beatmap
+              <Download size={18} className="text-emerald-400" /> Beatmap
             </button>
           </div>
           
           <div className="flex gap-4 justify-center mt-4">
             <button 
               onClick={onReplay}
-              className="px-8 py-4 bg-white text-black font-bold rounded-full text-lg hover:scale-105 transition-transform cursor-pointer flex-1"
+              className="px-8 py-4 bg-emerald-500 text-black font-black rounded-full text-lg hover:scale-105 transition-all cursor-pointer flex-1 shadow-[0_0_20px_rgba(16,185,129,0.3)] hover:shadow-[0_0_30px_rgba(16,185,129,0.5)]"
             >
               Play Again
             </button>
             <button 
               onClick={onMenu}
-              className="px-8 py-4 bg-zinc-800 text-white font-bold rounded-full text-lg hover:scale-105 transition-transform cursor-pointer flex-1"
+              className="px-8 py-4 bg-zinc-900 border border-zinc-800 text-white font-bold rounded-full text-lg hover:scale-105 transition-all cursor-pointer flex-1 hover:border-zinc-700"
             >
-              Play Another Track
+              Select Track
             </button>
           </div>
         </div>

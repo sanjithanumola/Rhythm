@@ -28,7 +28,7 @@ export function Generating() {
     <div className="flex flex-col items-center justify-center min-h-screen bg-zinc-950 text-white p-8">
       <div className="relative w-24 h-24 mb-12">
         <div className="absolute inset-0 border-4 border-zinc-800 rounded-full"></div>
-        <div className="absolute inset-0 border-4 border-purple-500 border-t-transparent rounded-full animate-spin"></div>
+        <div className="absolute inset-0 border-4 border-emerald-500 border-t-transparent rounded-full animate-spin"></div>
       </div>
       <h2 className="text-4xl font-bold mb-6 tracking-tight">Composing your track...</h2>
       

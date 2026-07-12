@@ -39,7 +39,7 @@ export function Menu({ onStart, onSelectLibrarySong, errorMsg, hasKey, onSelectK
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-zinc-950 text-white p-8">
       <div className="max-w-4xl text-center">
-        <h1 className="text-7xl font-black mb-6 tracking-tighter text-transparent bg-clip-text bg-gradient-to-br from-indigo-400 via-purple-400 to-pink-400">
+        <h1 className="text-7xl font-black mb-6 tracking-tighter text-transparent bg-clip-text bg-gradient-to-br from-emerald-400 via-teal-300 to-emerald-500">
           LYRIA RHYTHM
         </h1>
         <p className="text-xl mb-12 text-zinc-400 leading-relaxed max-w-3xl mx-auto">
@@ -55,7 +55,7 @@ export function Menu({ onStart, onSelectLibrarySong, errorMsg, hasKey, onSelectK
               {FEATURED_SONGS.map((song) => (
                 <div 
                   key={song.id}
-                  className="bg-zinc-900 border border-zinc-800 rounded-2xl overflow-hidden hover:border-purple-500/50 transition-all group cursor-pointer"
+                  className="bg-zinc-900 border border-zinc-800 rounded-2xl overflow-hidden hover:border-emerald-500/50 transition-all group cursor-pointer"
                   onClick={() => onSelectLibrarySong(song)}
                 >
                   <div className="aspect-square bg-zinc-800 relative overflow-hidden">
@@ -89,7 +89,7 @@ export function Menu({ onStart, onSelectLibrarySong, errorMsg, hasKey, onSelectK
         {/* How to Play Section */}
         <div className="max-w-2xl mx-auto bg-zinc-900 border border-zinc-800 rounded-2xl p-6 text-left shadow-xl">
           <h2 className="text-xl font-bold text-zinc-200 mb-4 flex items-center gap-2">
-            <Zap size={20} className="text-purple-400" />
+            <Zap size={20} className="text-emerald-400" />
             How to Play
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
